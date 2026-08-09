@@ -1,0 +1,252 @@
+/* ============================================================
+   THEME — edit this block to restyle the entire site.
+   All components reference these semantic variables only.
+   ============================================================ */
+:root {
+  --color-primary: #3f6f4a;
+  --color-primary-dark: #285238;
+  --color-primary-light: #e8f0e8;
+
+  --color-accent: #c9a85c;
+  --color-accent-light: #f4ecd8;
+
+  --color-background: #fcfbf7;
+  --color-surface: #ffffff;
+
+  --color-text: #26332a;
+  --color-text-muted: #5c675f;
+
+  --color-border: #dfe4df;
+
+  --font-body:
+    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+
+  --radius: 6px;
+  --content-width: 46rem;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-background);
+  text-align: start;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  color: var(--color-primary-dark);
+  margin-block: 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5.5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin-block: 0 1em;
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 0.5rem;
+  inset-block-start: -3rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary-dark);
+  color: #fff;
+  border-radius: var(--radius);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  inset-block-start: 0.5rem;
+}
+
+.wrap {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+section {
+  padding-block: 3.5rem;
+}
+
+/* thin geometric divider between sections — subtle, content-first */
+section + section {
+  border-block-start: 1px solid var(--color-border);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  inline-size: 3.5rem;
+  block-size: 3px;
+  margin-block-start: 0.6rem;
+  background: linear-gradient(
+    to right,
+    var(--color-accent),
+    var(--color-accent-light)
+  );
+  border-radius: 2px;
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  background: var(--color-primary-dark);
+  color: var(--color-primary-light);
+  text-align: center;
+  padding-block: 5rem;
+  /* thin gold line — restrained Islamic-inspired accent */
+  border-block-end: 3px solid var(--color-accent);
+}
+
+.hero h1 {
+  color: #fff;
+  margin-block-end: 0.4em;
+}
+
+.hero .tagline {
+  font-size: 1.15rem;
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+.hero-meta {
+  margin-block: 1.5rem;
+  color: var(--color-accent-light);
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--color-accent-light);
+  color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   Content blocks
+   ============================================================ */
+.objectives {
+  padding-inline-start: 1.25rem;
+}
+
+.objectives li {
+  margin-block-end: 0.4rem;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-inline-start: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+}
+
+.card h3 {
+  margin-block-end: 0.35rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.info-list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.info-list dt {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.info-list dd {
+  margin: 0 0 0.75rem;
+}
+
+.note {
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: var(--color-primary-light);
+  text-align: center;
+  padding-block: 1.75rem;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: inherit;
+}
